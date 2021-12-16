@@ -1,5 +1,5 @@
 
-f = open("eng-jpn.txt","r", encoding="utf-8")
+f = open("eng-jpn_original.txt","r", encoding="utf-8")
 line = f.readlines()
 #print(line)
 new_line = []
@@ -12,6 +12,6 @@ for i in range(0, len(line)):
   new_line.append(r)
 #print(new_line)
 
-ff = open('myfile.txt', 'w', encoding="utf-8")
+ff = open('eng-jpn.txt', 'w', encoding="utf-8")
 ff.writelines([w + '\n' for w in new_line])
 ff.close()
