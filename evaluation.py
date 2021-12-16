@@ -1,3 +1,7 @@
+# this program was referred from https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
+# dataset was referred from https://www.manythings.org/anki/
+
+
 from __future__ import unicode_literals, print_function, division
 import random
 import torch
