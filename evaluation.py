@@ -1,14 +1,13 @@
 # this program was referred from https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
 # dataset was referred from https://www.manythings.org/anki/
 
-
 from __future__ import unicode_literals, print_function, division
 import random
 import torch
 import matplotlib.pyplot as plt
-plt.switch_backend('agg')
 import matplotlib.ticker as ticker
 import argparse
+import os
 
 
 import lang_data
@@ -62,6 +61,7 @@ def evaluate(encoder, decoder, sentence, max_length=lang_data.MAX_LENGTH):
 #
 
 def evaluateRandomly(encoder, decoder, n=10):
+    print('>:input, =:target, <:output')
     for i in range(n):
         pair = random.choice(lang_data.pairs)
         print('>', pair[0])
@@ -131,7 +131,7 @@ def showAttention(input_sentence, output_words, attentions):
     # Set up figure with colorbar
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    cax = ax.matshow(attentions.numpy(), cmap='bone')
+    cax = ax.matshow(attentions.numpy(), cmap='bone', vmin=0, vmax=1)
     fig.colorbar(cax)
 
     # Set up axes
@@ -145,6 +145,11 @@ def showAttention(input_sentence, output_words, attentions):
 
     plt.show()
 
+    rstrip_sentence = input_sentence.rstrip('?')
+    dir_name = f'results/attention_image'
+    if not os.path.exists(dir_name):
+        os.mkdir(dir_name)
+    fig.savefig(f"{dir_name}/{rstrip_sentence.replace(' ', '_')}.png")
 
 def evaluateAndShowAttention(input_sentence):
     output_words, attentions = evaluate(

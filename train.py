@@ -8,7 +8,6 @@ from torch import optim
 
 
 import matplotlib.pyplot as plt
-plt.switch_backend('agg')
 import matplotlib.ticker as ticker
 import numpy as np
 
@@ -117,3 +116,7 @@ def showPlot(points):
     loc = ticker.MultipleLocator(base=0.2)
     ax.yaxis.set_major_locator(loc)
     plt.plot(points)
+    plt.xlabel("iter")
+    plt.ylabel("losses")
+    plt.show()
+    fig.savefig(f'results/loss.png')
