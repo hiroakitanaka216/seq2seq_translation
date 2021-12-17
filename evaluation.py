@@ -117,8 +117,12 @@ evaluateRandomly(encoder1, attn_decoder1)
 # output steps:
 #
 
-output_words, attentions = evaluate(
-    encoder1, attn_decoder1, "je suis trop froid .")
+output_words, attentions = evaluate(encoder1, attn_decoder1, "je suis trop froid .")
+
+#output_words, attentions = evaluate(encoder1, attn_decoder1, "空気 が 暖かく なっ た 。")
+
+#output_words, attentions = evaluate(encoder1, attn_decoder1, "Том не хочет быть каскадёром .")
+
 plt.matshow(attentions.numpy())
 
 
