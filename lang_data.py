@@ -53,7 +53,11 @@ def readLangs(lang1, lang2, reverse=False):
         read().strip().split('\n')
 
     # Split every line into pairs and normalize
-    pairs = [[normalizeString(s) for s in l.split('\t')] for l in lines]
+    if lang2 == 'jpn':
+        pairs = [[s for s in l.split('\t')] for l in lines]
+    else:
+        pairs = [[normalizeString(s) for s in l.split('\t')] for l in lines]
+
 
     # Reverse pairs, make Lang instances
     if reverse:
