@@ -21,18 +21,18 @@ args = parser.parse_args()
 
 def evaluate(encoder, decoder, sentence, max_length=lang_data.MAX_LENGTH):
     with torch.no_grad():
-        input_tensor = seq2seq_RNN.tensorFromSentence(lang_data.input_lang, sentence) #model
+        input_tensor = seq2seq_GRU.tensorFromSentence(lang_data.input_lang, sentence) #model
         input_length = input_tensor.size()[0]
         encoder_hidden = encoder.initHidden()
 
-        encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=seq2seq_RNN.device) #model
+        encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=seq2seq_GRU.device) #model
 
         for ei in range(input_length):
             encoder_output, encoder_hidden = encoder(input_tensor[ei],
                                                      encoder_hidden)
             encoder_outputs[ei] += encoder_output[0, 0]
 
-        decoder_input = torch.tensor([[lang_data.SOS_token]], device=seq2seq_RNN.device)  # SOS #model
+        decoder_input = torch.tensor([[lang_data.SOS_token]], device=seq2seq_GRU.device)  # SOS #model
 
         decoder_hidden = encoder_hidden
 
@@ -92,8 +92,8 @@ def evaluateRandomly(encoder, decoder, n=10):
 #
 
 hidden_size = 256
-encoder1 = seq2seq_RNN.EncoderRNN(lang_data.input_lang.n_words, hidden_size).to(seq2seq_RNN.device) #model
-attn_decoder1 = seq2seq_RNN.AttnDecoderRNN(hidden_size, lang_data.output_lang.n_words, dropout_p=0.1).to(seq2seq_RNN.device) #model
+encoder1 = seq2seq_GRU.EncoderRNN(lang_data.input_lang.n_words, hidden_size).to(seq2seq_GRU.device) #model
+attn_decoder1 = seq2seq_GRU.AttnDecoderRNN(hidden_size, lang_data.output_lang.n_words, dropout_p=0.1).to(seq2seq_GRU.device) #model
 
 train.trainIters(encoder1, attn_decoder1, args.epoch, print_every=5000)
 
