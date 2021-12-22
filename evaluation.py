@@ -117,7 +117,9 @@ evaluateRandomly(encoder1, attn_decoder1)
 # output steps:
 #
 
-output_words, attentions = evaluate(encoder1, attn_decoder1, "je suis trop froid .")
+#output_words, attentions = evaluate(encoder1, attn_decoder1, "je suis trop froid .")
+
+output_words, attentions = evaluate(encoder1, attn_decoder1, "A volte sogno mia madre .")
 
 #output_words, attentions = evaluate(encoder1, attn_decoder1, "空気 が 暖かく なっ た 。")
 
@@ -162,7 +164,7 @@ def evaluateAndShowAttention(input_sentence):
     print('output =', ' '.join(output_words))
     showAttention(input_sentence, output_words, attentions)
 
-
+'''eng-fra version
 evaluateAndShowAttention("elle a cinq ans de moins que moi .")
 
 evaluateAndShowAttention("elle est trop petit .")
@@ -170,3 +172,11 @@ evaluateAndShowAttention("elle est trop petit .")
 evaluateAndShowAttention("je ne crains pas de mourir .")
 
 evaluateAndShowAttention("c est un jeune directeur plein de talent .")
+'''
+evaluateAndShowAttention("Ho iniziato il mio nuovo lavoro lunedì .")
+
+evaluateAndShowAttention("Tom ti incontrerà domani mattina .")
+
+evaluateAndShowAttention("Penso che sia ora per me di organizzare una festa .")
+
+evaluateAndShowAttention("Ho lavorato lunedì .")
