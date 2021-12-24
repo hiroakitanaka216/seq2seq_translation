@@ -164,7 +164,8 @@ def evaluateAndShowAttention(input_sentence):
     print('output =', ' '.join(output_words))
     showAttention(input_sentence, output_words, attentions)
 
-'''eng-fra version
+'''
+#eng-fra version
 evaluateAndShowAttention("elle a cinq ans de moins que moi .")
 
 evaluateAndShowAttention("elle est trop petit .")
@@ -173,6 +174,7 @@ evaluateAndShowAttention("je ne crains pas de mourir .")
 
 evaluateAndShowAttention("c est un jeune directeur plein de talent .")
 '''
+#eng-ita version
 evaluateAndShowAttention("so che ha paura dei serpenti .")
 
 evaluateAndShowAttention("visiteremo nostro zio domenica prossima .")
