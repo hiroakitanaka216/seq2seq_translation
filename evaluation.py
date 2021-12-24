@@ -119,7 +119,7 @@ evaluateRandomly(encoder1, attn_decoder1)
 
 #output_words, attentions = evaluate(encoder1, attn_decoder1, "je suis trop froid .")
 
-output_words, attentions = evaluate(encoder1, attn_decoder1, "A volte sogno mia madre .")
+output_words, attentions = evaluate(encoder1, attn_decoder1, "a volte sogno mia madre .")
 
 #output_words, attentions = evaluate(encoder1, attn_decoder1, "空気 が 暖かく なっ た 。")
 
@@ -173,10 +173,10 @@ evaluateAndShowAttention("je ne crains pas de mourir .")
 
 evaluateAndShowAttention("c est un jeune directeur plein de talent .")
 '''
-evaluateAndShowAttention("Ho iniziato il mio nuovo lavoro lunedì .")
+evaluateAndShowAttention("so che ha paura dei serpenti .")
 
-evaluateAndShowAttention("Tom ti incontrerà domani mattina .")
+evaluateAndShowAttention("visiteremo nostro zio domenica prossima .")
 
-evaluateAndShowAttention("Penso che sia ora per me di organizzare una festa .")
+evaluateAndShowAttention("penso che sia ora per me di organizzare una festa .")
 
-evaluateAndShowAttention("Ho lavorato lunedì .")
+evaluateAndShowAttention("a me piace veramente la sua musica .")

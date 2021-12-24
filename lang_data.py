@@ -28,6 +28,7 @@ class Lang:
             self.n_words += 1
         else:
             self.word2count[word] += 1
+        print(word)
 
 
 def unicodeToAscii(s):
@@ -71,7 +72,7 @@ def readLangs(lang1, lang2, reverse=False):
     return input_lang, output_lang, pairs
 
 
-MAX_LENGTH = 10
+MAX_LENGTH = 30
 
 eng_prefixes = (
     "i am ", "i m ",
