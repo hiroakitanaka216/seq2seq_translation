@@ -28,7 +28,6 @@ class Lang:
             self.n_words += 1
         else:
             self.word2count[word] += 1
-        print(word)
 
 
 def unicodeToAscii(s):

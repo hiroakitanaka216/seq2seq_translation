@@ -175,6 +175,16 @@ evaluateAndShowAttention("je ne crains pas de mourir .")
 
 evaluateAndShowAttention("c est un jeune directeur plein de talent .")
 
+evaluateAndShowAttention("")
+
+evaluateAndShowAttention("")
+
+evaluateAndShowAttention("")
+
+evaluateAndShowAttention("")
+
+evaluateAndShowAttention("")
+
 '''
 #eng-ita 4 examples version
 evaluateAndShowAttention("so che ha paura dei serpenti .")
