@@ -25,4 +25,4 @@ for i2 in range(100):  # 文書数100の場合
         s = s + nltk.translate.bleu_score.sentence_bleu([re], hy, smoothing_function=chencherry.method4)
 
 print("BLEU:")
-print(s / 1000)
+print(s / 100)
