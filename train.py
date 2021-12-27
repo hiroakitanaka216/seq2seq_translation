@@ -29,7 +29,7 @@ def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, deco
     input_length = input_tensor.size(0)
     target_length = target_tensor.size(0)
 
-    encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=seq2seq_GRU.device) #model
+    encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=seq2seq_RNN.device) #model
 
     loss = 0
 
@@ -38,7 +38,7 @@ def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, deco
             input_tensor[ei], encoder_hidden)
         encoder_outputs[ei] = encoder_output[0, 0]
 
-    decoder_input = torch.tensor([[lang_data.SOS_token]], device=seq2seq_GRU.device) #model
+    decoder_input = torch.tensor([[lang_data.SOS_token]], device=seq2seq_RNN.device) #model
 
     decoder_hidden = encoder_hidden
 
@@ -79,7 +79,7 @@ def trainIters(encoder, decoder, epoch, print_every=1, plot_every=100, learning_
 
     encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
     decoder_optimizer = optim.SGD(decoder.parameters(), lr=learning_rate)
-    training_pairs = [seq2seq_GRU.tensorsFromPair(random.choice(lang_data.pairs)) #model
+    training_pairs = [seq2seq_RNN.tensorsFromPair(random.choice(lang_data.pairs)) #model
                       for i in range(epoch)]
     criterion = nn.NLLLoss()
 
