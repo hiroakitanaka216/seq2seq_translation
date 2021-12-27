@@ -166,12 +166,12 @@ def evaluateAndShowAttention(input_sentence):
     print('input =', input_sentence)
     print('output =', ' '.join(output_words))
     line_eng.append(' '.join(output_words))
-    ff = open('data/eng-fra_output_pred(eng).txt', 'w', encoding="utf-8")
+    ff = open('data/for_evaluation/eng-fra_output_pred(eng).txt', 'w', encoding="utf-8")
     ff.writelines([w + '\n' for w in line_eng])
     ff.close()
     showAttention(input_sentence, output_words, attentions)
 
-f0 = open("data/eng-fra_input(fra).txt","r", encoding="utf-8")
+f0 = open("data/for_evaluation/eng-fra_input(fra).txt","r", encoding="utf-8")
 line_fr0 = f0.readlines()
 line_fr = []
 

@@ -4,8 +4,8 @@
 import nltk
 from nltk.translate.bleu_score import SmoothingFunction
 
-f = open("data/eng-fra_output_pred(eng).txt", "r")  # 出力
-f2 = open("data/eng-fra_output(eng).txt", "r")  # 正解
+f = open("data/for_evaluation/eng-fra_output_pred(eng).txt", "r")  # 出力
+f2 = open("data/for_evaluation/eng-fra_output(eng).txt", "r")  # 正解
 
 a = f.read()
 li = a.split("\n")
