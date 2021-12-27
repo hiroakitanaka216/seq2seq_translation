@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import argparse
 import os
+import re
 
 
 import lang_data
@@ -157,15 +158,31 @@ def showAttention(input_sentence, output_words, attentions):
         os.mkdir(dir_name)
     fig.savefig(f"{dir_name}/{rstrip_sentence.replace(' ', '_')}.png")
 
+line_eng = []
+
 def evaluateAndShowAttention(input_sentence):
     output_words, attentions = evaluate(
         encoder1, attn_decoder1, input_sentence)
     print('input =', input_sentence)
     print('output =', ' '.join(output_words))
+    line_eng.append(' '.join(output_words))
+    ff = open('data/eng-fra_output_pred(eng).txt', 'w', encoding="utf-8")
+    ff.writelines([w + '\n' for w in line_eng])
+    ff.close()
     showAttention(input_sentence, output_words, attentions)
 
+f0 = open("data/eng-fra_input(fra).txt","r", encoding="utf-8")
+line_fr0 = f0.readlines()
+line_fr = []
 
+for x in line_fr0:
+    line_fr.append(x.replace("\n", ""))
 
+for i in range(0, len(line_fr)):
+  s = str(line_fr[i])
+  evaluateAndShowAttention(s)
+
+'''
 #eng-fra 4 examples version
 evaluateAndShowAttention("elle a cinq ans de moins que moi .")
 
@@ -174,17 +191,7 @@ evaluateAndShowAttention("elle est trop petit .")
 evaluateAndShowAttention("je ne crains pas de mourir .")
 
 evaluateAndShowAttention("c est un jeune directeur plein de talent .")
-
-evaluateAndShowAttention("")
-
-evaluateAndShowAttention("")
-
-evaluateAndShowAttention("")
-
-evaluateAndShowAttention("")
-
-evaluateAndShowAttention("")
-
+'''
 '''
 #eng-ita 4 examples version
 evaluateAndShowAttention("so che ha paura dei serpenti .")
