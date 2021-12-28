@@ -110,7 +110,5 @@ def prepareData(lang1, lang2, reverse=False):
 
 
 input_lang, output_lang, pairs = prepareData('eng', 'fra', True)
-#input_lang, output_lang, pairs = prepareData('eng', 'ita', True)
 #input_lang, output_lang, pairs = prepareData('eng', 'jpn', True)
-#input_lang, output_lang, pairs = prepareData('eng', 'rus', True)
 print(random.choice(pairs))

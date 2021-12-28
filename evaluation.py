@@ -120,11 +120,7 @@ evaluateRandomly(encoder1, attn_decoder1)
 
 output_words, attentions = evaluate(encoder1, attn_decoder1, "je suis trop froid .")
 
-#output_words, attentions = evaluate(encoder1, attn_decoder1, "a volte sogno mia madre .")
-
 #output_words, attentions = evaluate(encoder1, attn_decoder1, "空気 が 暖かく なっ た 。")
-
-#output_words, attentions = evaluate(encoder1, attn_decoder1, "Том не хочет быть каскадёром .")
 
 plt.matshow(attentions.numpy())
 
@@ -191,14 +187,4 @@ evaluateAndShowAttention("elle est trop petit .")
 evaluateAndShowAttention("je ne crains pas de mourir .")
 
 evaluateAndShowAttention("c est un jeune directeur plein de talent .")
-'''
-'''
-#eng-ita 4 examples version
-evaluateAndShowAttention("so che ha paura dei serpenti .")
-
-evaluateAndShowAttention("visiteremo nostro zio domenica prossima .")
-
-evaluateAndShowAttention("penso che sia ora per me di organizzare una festa .")
-
-evaluateAndShowAttention("a me piace veramente la sua musica .")
 '''
