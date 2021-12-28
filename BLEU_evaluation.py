@@ -4,7 +4,8 @@
 import nltk
 from nltk.translate.bleu_score import SmoothingFunction
 
-f = open("data/for_evaluation/eng-fra_output_pred(eng).txt", "r")  # 出力
+f = open("data/for_evaluation/eng-fra_output_pred(eng)_epoch12500_GRU.txt", "r")  # 出力１
+#f = open("data/for_evaluation/eng-fra_output_pred(eng)_epoch12500_RNN.txt", "r")  # 出力２
 f2 = open("data/for_evaluation/eng-fra_output_correct(eng).txt", "r")  # 正解
 
 a = f.read()
@@ -16,7 +17,7 @@ s = 0.0
 
 chencherry = SmoothingFunction()
 
-for i2 in range(100):  # 文書数100の場合
+for i2 in range(len(li)):  # 文書数100の場合
     hy = []
     re = []
     hy = li[i2].split(" ")
@@ -25,4 +26,4 @@ for i2 in range(100):  # 文書数100の場合
         s = s + nltk.translate.bleu_score.sentence_bleu([re], hy, smoothing_function=chencherry.method4)
 
 print("BLEU:")
-print(s / 100)
+print(s / len(li))
