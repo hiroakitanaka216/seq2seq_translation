@@ -4,11 +4,11 @@
 import nltk
 from nltk.translate.bleu_score import SmoothingFunction
 
-#f = open("data/for_evaluation/eng-fra_output_pred(eng)_epoch12500_GRU.txt", "r")  # 出力１
-#f = open("data/for_evaluation/eng-fra_output_pred(eng)_epoch12500_RNN.txt", "r")  # 出力２
-#f = open("data/for_evaluation/eng-fra_output_pred(eng)_DeepL.txt", "r")  # 出力３
-f = open("data/for_evaluation/eng-fra_output_pred(eng)_GoogleTranslation.txt", "r")  # 出力４
-f2 = open("data/for_evaluation/eng-fra_output_correct(eng).txt", "r")  # 正解
+#f = open("eng-fra_output_pred(eng)_epoch12500_GRU.txt", "r")  # 出力１
+f = open("eng-fra_output_pred(eng)_epoch4000_RNN.txt", "r")  # 出力２
+#f = open("eng-fra_output_pred(eng)_DeepL.txt", "r")  # 出力３
+#f = open("eng-fra_output_pred(eng)_GoogleTranslation.txt", "r")  # 出力４
+f2 = open("eng-fra_output_correct(eng).txt", "r")  # 正解
 
 a = f.read()
 li = a.split("\n")
