@@ -17,7 +17,7 @@ import seq2seq_RNN
 import train
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--epoch', type=int, default=125000) #or default=1
+parser.add_argument('--epoch', type=int, default=40000) #or default=1
 args = parser.parse_args()
 
 def evaluate(encoder, decoder, sentence, max_length=lang_data.MAX_LENGTH):
